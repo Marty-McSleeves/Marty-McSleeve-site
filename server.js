@@ -36,7 +36,7 @@ router.get('/spark_temp', function(req, res){
 })
 
 router.post('/spark_up'), function(req, res){
-  res.json("{message: you called the up function but it's not implemented yet!"})
+  res.json("{message: you called the up function but it's not implemented yet!}")
 }
 
 router.post('/spark_down'), function(req, res){
