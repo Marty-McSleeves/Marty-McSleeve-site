@@ -55,13 +55,13 @@ button{
   </div>
 <script>
 
-$.get( "http://api.wunderground.com/api/a5b4d8562aa06da2/conditions/q/CA/San_Francisco.json", function( data ) {
-  $( "span" ).text(data.current_observation.temp_f);
+
+$.get( "/spark_temp", function( data ) {
+  console.log(data.body.result);
 });
 
-$.get( "https://api.spark.io/v1/devices?access_token=06e417a703ea5789b3a47a998e1c5785c21a7726", function( data ) {
-  $( ".result" ).html( data );
-  console.log(data);
+$.get( "/intel_api", function( data ) {
+  $( "span" ).text(data.body.current_observation.temp_f);
 });
 
 </script>
