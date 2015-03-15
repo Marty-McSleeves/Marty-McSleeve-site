@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Marty McSleeve</title>
+    <title>Marty McSleeves</title>
     <link type="text/css" href="../css/normalize.css">
     <link type="text/css" href="/css/style.css">
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 
 </head>
 
@@ -17,12 +18,33 @@
 
 <style>
 
-html{
+.wrapper{
+  padding: 0;
+}
+
+
+h1, h3, button{
+  font-family: 'Droid Sans', sans-serif;
+  color: white;
+}
+
+.marty-mcsleeves{
+  color: white;
+  font-size: 3em;
+}
+
+h1{
+  color: white;
+}
+
+button{
+  font-size: 15px;
+  /*display: inline-block;*/
 }
 
 body{
   text-align: center;
-  background-image: url('http://wallpapers.windowsace.com/pics/b/a/background-landscape-nanoplate-design-art-graphic-wallpaper-l-t-ibackgroundz.com.jpg');
+  background-image: url('http://ipadwallpapergallery.com/uploads/mustberesult-blue-gradient-ipad-wallpaper.jpg');
   background-size: 100% 600px;
   /*border: 1px solid black;*/
   margin: auto;
@@ -44,17 +66,38 @@ button{
   margin:1% 0;
   width: 75px;
   background-color: #3A9FE5;
-  /*box-shadow: 2px 2px 1px white;*/
-  opacity: .8;
+  /*box-shadow: 2px 2px 1px limegreen;*/
+  opacity: .7;
 }
 
+.bottom-panel{
+  background-color: rgba(255,255,255, .2);
+  /*opacity: .5;*/
+  padding: 3px;
+  width:400px;
+  margin: auto;
+  border-radius: 8px;
+  /*box-shadow: 100px 10px 5px #000000;*/
+}
+
+.subtitle{
+  color: black;
+}
+
+
+
 </style>
-  <div>
+  <div class="wrapper">
+    <!-- <h1> -->
+    <h1 class="marty-mcsleeves">MARTY McSLEEVES</h1>
+    <!-- </h1> -->
     <h1>The temperature in your area is <span></span>&#176 F.</h1>
-    <h3>What would you like to do?</h3>
-    <button id='up-button'>Roll<br>Up</button><br>
-    <button id='down-button'>Roll<br>Down</button><br>
-    <button id='climate-button'>Climate<br>Control</button>
+    <div class="bottom-panel">
+      <h3 class='subtitle'>What would you like to do?</h3>
+      <button id='up-button'>Roll<br>Up</button><br>
+      <button id='down-button'>Roll<br>Down</button><br>
+      <button id='climate-button'>Climate<br>Control</button>
+    </div>
   </div>
 <script>
 
