@@ -6,7 +6,7 @@
 
     <title>Marty McSleeve</title>
     <link type="text/css" href="../css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="public/views/css/style.css">
+    <link type="text/css" href="/css/style.css">
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
 </head>
@@ -50,8 +50,8 @@ button{
 
 </style>
   <div>
-    <h1>The Temperature in your area is <span></span>&#176 F.</h1>
-    <h3>What Would you like to do?</h3>
+    <h1>The temperature in your area is <span></span>&#176 F.</h1>
+    <h3>What would you like to do?</h3>
     <button id='up-button'>Roll<br>Up</button><br>
     <button id='down-button'>Roll<br>Down</button><br>
     <button id='climate-button'>Climate<br>Control</button>
@@ -66,7 +66,9 @@ $('#up-button').on('click', function(){
 });
 
 $('#down-button').on('click', function(){
-  console.log('down')
+  $.post('/spark_down', function(data){
+    console.log(data)
+  })
 });
 
 $('#climate-button').on('click', function(){
