@@ -60,6 +60,9 @@ button{
 
 $('#up-button').on('click', function(){
   console.log('up')
+  $.post('/spark_up', function(data){
+    console.log(data)
+  })
 });
 
 $('#down-button').on('click', function(){
@@ -67,7 +70,6 @@ $('#down-button').on('click', function(){
 });
 
 $('#climate-button').on('click', function(){
-  console.log('climate')
 })
 
 $.get( "/spark_temp", function( data ) {
