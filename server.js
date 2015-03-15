@@ -36,11 +36,15 @@ router.get('/spark_temp', function(req, res){
 })
 
 router.post('/spark_up', function(req, res){
-  res.json("{message: you called the up function but it's not implemented yet!}")
+  unirest.post('https://api.spark.io/v1/devices/'+process.env.SPARK_ID+'/rollup?access_token='+process.env.SPARK_AUTH).end(function(data){
+    console.log(data);
+  })
 })
 
 router.post('/spark_down', function(req, res){
-  res.json("{message: you called the down function but it's not implemented yet!}")
+  unirest.post('https://api.spark.io/v1/devices/'+process.env.SPARK_ID+'/rolldown?access_token='+process.env.SPARK_AUTH).end(function(data){
+    console.log(data);
+  })
 })
 
 router.get('/intel_api', function(req, res){
