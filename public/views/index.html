@@ -17,17 +17,42 @@
 
 <style>
 
+html{
+  background-image: url('http://wallpapers.windowsace.com/pics/b/a/background-landscape-nanoplate-design-art-graphic-wallpaper-l-t-ibackgroundz.com.jpg');
+  background-size: 100%;
+}
+
 body{
   text-align: center;
+  border: 1px solid black;
+  margin: auto;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto
+}
+
+div{
+  /*border: 1px solid black;*/
+  padding: 5% 0;
+}
+
+button{
+  border-radius: 100%;
+  height: 75px;
+  margin:1% 0;
+  width: 75px;
 }
 
 </style>
-
-  <h1>The Temperature in your area is <span><span>.</h1>
-  <h3>What Would you like to do?</h3>
-  <button>Roll Up</button><br>
-  <button>Roll Down</button><br>
-  <button>Climate Control</button>
+  <div>
+    <h1>The Temperature in your area is <span></span>&#176 F.</h1>
+    <h3>What Would you like to do?</h3>
+    <button>Roll<br>Up</button><br>
+    <button>Roll<br>Down</button><br>
+    <button>Climate<br>Control</button>
+  </div>
 <script>
 
 $.get( "http://api.wunderground.com/api/a5b4d8562aa06da2/conditions/q/CA/San_Francisco.json", function( data ) {
