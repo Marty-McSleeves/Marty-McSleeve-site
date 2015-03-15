@@ -40,7 +40,7 @@ router.post('/spark_up'), function(req, res){
 }
 
 router.post('/spark_down'), function(req, res){
-  res.json("{message: you called the down function but it's not implemented yet!"})
+  res.json("{message: you called the down function but it's not implemented yet!}")
 }
 
 router.get('/intel_api', function(req, res){
