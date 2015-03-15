@@ -35,6 +35,13 @@ router.get('/spark_temp', function(req, res){
   })
 })
 
+router.post('/spark_up'), function(req, res){
+  res.json("{message: you called the up function but it's not implemented yet!"})
+}
+
+router.post('/spark_down'), function(req, res){
+  res.json("{message: you called the down function but it's not implemented yet!"})
+}
 
 router.get('/intel_api', function(req, res){
   unirest.get('http://api.wunderground.com/api/'+process.env.INTEL_API_KEY+'/conditions/q/CA/San_Francisco.json').end(function(data){
@@ -45,10 +52,7 @@ router.get('/intel_api', function(req, res){
 // more routes for our API will happen here
 
 // REGISTER OUR ROUTES -------------------------------
-// all of our routes will be prefixed with /api
 app.use('/', router);
 
-// START THE SERVER
-// =============================================================================
 app.listen(port);
 console.log('Magic happens on port ' + port);
