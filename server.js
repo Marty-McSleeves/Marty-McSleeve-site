@@ -17,9 +17,20 @@ var port = process.env.PORT || 8080;        // set our port
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
 
+
+var unirest = require('unirest');
+
+unirest.get('https://api.spark.io/v1/devices?access_token=06e417a703ea5789b3a47a998e1c5785c21a7726').end(function(response){
+  console.log(response.body);
+})
+
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
+// router.get('/', function(req, res) {
+//     res.json({ message: 'hooray! welcome to our api!' });
+// });
+
 router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });
+    res.sendfile('public/views/index.html');
 });
 
 // more routes for our API will happen here
