@@ -20,7 +20,7 @@ var router = express.Router();              // get an instance of the express Ro
 
 var unirest = require('unirest');
 
-unirest.get('https://api.spark.io/v1/devices?access_token=06e417a703ea5789b3a47a998e1c5785c21a7726').end(function(response){
+unirest.get('https://api.spark.io/v1/devices/54ff72066672524817572067/temperature?access_token=475383421763ac3fb416a37b94e4c3d98164b5fc').end(function(response){
   console.log(response.body);
 })
 
