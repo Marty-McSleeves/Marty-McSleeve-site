@@ -1,15 +1,44 @@
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
 
-    <title>Starter MEAN Single Page Application</title>
+    <title>Marty McSleeve</title>
+    <link type="text/css" href="../css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="public/views/css/style.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
 </head>
+
+
+
 <body>
 
-    <h1>we did it!</h1>
-    <div style='color: limegreen'>Vincent is cool</div>
-    <div>hey<div>
+<style>
 
+body{
+  text-align: center;
+}
+
+</style>
+
+  <h1>The Temperature in your area is <span><span>.</h1>
+  <h3>What Would you like to do?</h3>
+  <button>Roll Up</button><br>
+  <button>Roll Down</button><br>
+  <button>Climate Control</button>
+<script>
+
+$.get( "http://api.wunderground.com/api/a5b4d8562aa06da2/conditions/q/CA/San_Francisco.json", function( data ) {
+  $( "span" ).text(data.current_observation.temp_f);
+});
+
+$.get( "https://api.spark.io/v1/devices?access_token=06e417a703ea5789b3a47a998e1c5785c21a7726", function( data ) {
+  $( ".result" ).html( data );
+  console.log(data);
+});
+
+</script>
 </body>
 </html>
