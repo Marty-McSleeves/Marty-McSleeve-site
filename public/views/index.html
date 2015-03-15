@@ -24,7 +24,7 @@ body{
   text-align: center;
   background-image: url('http://wallpapers.windowsace.com/pics/b/a/background-landscape-nanoplate-design-art-graphic-wallpaper-l-t-ibackgroundz.com.jpg');
   background-size: 100% 600px;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   margin: auto;
   width: 100%;
   position: absolute;
@@ -52,12 +52,23 @@ button{
   <div>
     <h1>The Temperature in your area is <span></span>&#176 F.</h1>
     <h3>What Would you like to do?</h3>
-    <button>Roll<br>Up</button><br>
-    <button>Roll<br>Down</button><br>
-    <button>Climate<br>Control</button>
+    <button id='up-button'>Roll<br>Up</button><br>
+    <button id='down-button'>Roll<br>Down</button><br>
+    <button id='climate-button'>Climate<br>Control</button>
   </div>
 <script>
 
+$('#up-button').on('click', function(){
+  console.log('up')
+});
+
+$('#down-button').on('click', function(){
+  console.log('down')
+});
+
+$('#climate-button').on('click', function(){
+  console.log('climate')
+})
 
 $.get( "/spark_temp", function( data ) {
   console.log(data.body.result);
